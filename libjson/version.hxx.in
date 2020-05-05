@@ -1,0 +1,36 @@
+#ifndef libjson__version_hxx_
+#define libjson__version_hxx_
+
+// The numeric version format is AAAAABBBBBCCCCCDDDE where:
+//
+// AAAAA - major version number
+// BBBBB - minor version number
+// CCCCC - bugfix version number
+// DDD   - alpha / beta (DDD + 500) version number
+// E     - final (0) / snapshot (1)
+//
+// When DDDE is not 0, 1 is subtracted from AAAAABBBBBCCCCC. For example:
+//
+// Version      AAAAABBBBBCCCCCDDDE
+//
+// 0.1.0        0000000001000000000
+// 0.1.2        0000000001000020000
+// 1.2.3        0000100002000030000
+// 2.2.0-a.1    0000200001999990010
+// 3.0.0-b.2    0000299999999995020
+// 2.2.0-a.1.z  0000200001999990011
+//
+#define LIBJSON_VERSION $libjson.version.project_number$ULL
+#define LIBJSON_VERSION_STR "$libjson.version.project$"
+#define LIBJSON_VERSION_ID "$libjson.version.project_id$"
+
+#define LIBJSON_VERSION_MAJOR $libjson.version.major$
+#define LIBJSON_VERSION_MINOR $libjson.version.minor$
+#define LIBJSON_VERSION_PATCH $libjson.version.patch$
+
+#define LIBJSON_PRE_RELEASE $libjson.version.pre_release$
+
+#define LIBJSON_SNAPSHOT_SN $libjson.version.snapshot_sn$ULL
+#define LIBJSON_SNAPSHOT_ID "$libjson.version.snapshot_id$"
+
+#endif

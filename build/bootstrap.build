@@ -1,0 +1,7 @@
+project = libjson
+
+using version
+using config
+using test
+using install
+using dist

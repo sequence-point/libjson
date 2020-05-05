@@ -1,0 +1,22 @@
+image: sequencepoint/buildenv:latest
+
+stages:
+  - test
+
+test-gcc:
+  stage: test
+  tags:
+    - linux
+    - docker
+  script:
+    - bdep init -C /build --forward config.cxx=g++ @default 
+    - TEST_VERBOSITY=1000 b test
+
+test-clang:
+  stage: test
+  tags:
+    - linux
+    - docker
+  script:
+    - bdep init -C /build --forward config.cxx=clang++ @default
+    - TEST_VERBOSITY=1000 b test
