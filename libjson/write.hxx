@@ -12,9 +12,10 @@ namespace json {
 class variant;
 
 inline void
-write(std::ostream& output, variant const& json)
+write(std::ostream& os, variant const& json)
 {
-  visit(emitter{ output }, json);
+  visit(emitter{ os }, json);
+  os << '\n';
 }
 
 inline std::string
